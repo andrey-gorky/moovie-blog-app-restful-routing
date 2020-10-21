@@ -1,0 +1,16 @@
+/* i.icon {
+	color: blue;
+} */
+
+.container.main {
+	margin-top: 7.0rem;
+}
+
+#delete {
+	display: inline;
+}
+
+img {
+	margin-bottom: 1.0rem;
+	max-height: 50rem;
+}

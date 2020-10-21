@@ -1,0 +1,33 @@
+<%- include("partials/header.ejs"); %>
+<div class="ui main text container ">
+	<div class="ui huge header"><%= movieInfo.title %> - <%= movieInfo.release %></div>
+	<div class="content">
+		<span>Added: <%= movieInfo.created.toDateString() %></span>
+	</div>
+	<div class="ui top attached segment">
+		<div class="item">
+			<img class="ui centered rounded image" src="<%= movieInfo.poster %>" alt="">
+			<div class="description">
+				<p><%= movieInfo.plot %></p>
+			</div>
+			<a class="ui orange basic button" href="/movies/<%= movieInfo._id %>/edit">Edit</a>
+			<form id="delete" action="/movies/<%= movieInfo._id %>?_method=DELETE" method="POST"
+				onclick="confirm('Want to delete?');">
+				<button class=" ui red basic button">Delete</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script>
+
+	var result = confirm("Want to delete?");
+	if (result == true) {
+		return true;
+	} else {
+		return false;
+	}
+
+</script>
+
+<%- include("partials/footer.ejs"); %>

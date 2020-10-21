@@ -1,0 +1,33 @@
+<%- include("partials/header.ejs"); %>
+
+<div class="ui main text container segment">
+	<div class="ui huge header">New Movie</div>
+
+	<form class="ui form" action="/movies" method="POST">
+		<div class="field">
+			<label>Title</label>
+			<input type="text" name="movies[title]" placeholder="Title" required>
+		</div>
+
+		<div class="field">
+			<label>Release Year</label>
+			<input type="text" name="movies[release]" placeholder="Release Year" required>
+		</div>
+
+		<div class="field">
+			<label>Poster</label>
+			<input type="text" name="movies[poster]" placeholder="Poster Url" required>
+		</div>
+
+		<div class="field">
+			<label>Plot</label>
+			<textarea name="movies[plot]" placeholder="Plot" required></textarea>
+			<!-- <input type="text" name="movies[plot]" placeholder="Plot"> -->
+		</div>
+
+		<input class="ui green button" type="submit">
+	</form>
+
+</div>
+
+<%- include("partials/footer.ejs"); %>

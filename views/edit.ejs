@@ -1,0 +1,33 @@
+<%- include("partials/header.ejs"); %>
+
+<div class="ui main text container segment">
+	<div class="ui huge header">Edit "<%= movieInfo.title %>" Info</div>
+
+	<form class="ui form" action="/movies/<%= movieInfo._id %>?_method=PUT" method="POST">
+		<div class="field">
+			<label>Title</label>
+			<input type="text" name="movies[title]" value="<%= movieInfo.title %>" required>
+		</div>
+
+		<div class="field">
+			<label>Release Year</label>
+			<input type="text" name="movies[release]" value="<%= movieInfo.release %>" required>
+		</div>
+
+		<div class="field">
+			<label>Poster</label>
+			<input type="text" name="movies[poster]" value="<%= movieInfo.poster %>" required>
+		</div>
+
+		<div class="field">
+			<label>Plot</label>
+			<textarea name="movies[plot]" required><%= movieInfo.plot %></textarea>
+			<!-- <input type="text" name="movies[plot]" placeholder="Plot"> -->
+		</div>
+
+		<input class="ui green button" type="submit">
+	</form>
+
+</div>
+
+<%- include("partials/footer.ejs"); %>
